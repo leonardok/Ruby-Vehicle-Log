@@ -1,3 +1,5 @@
-require './snowdonia_tracker'
+# require all the controllers
+Dir.glob('./app/*_controller.rb').each { |file| require file }
 
-run Sinatra::Application
+map('/vehicles/') { run VehicleController }
+map('/') { run HomeController }
