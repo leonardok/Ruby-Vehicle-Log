@@ -6,4 +6,8 @@ class HomeController < Sinatra::Base
     get '/' do
         redirect "http://leok.me/backend-code-challenge/"
     end
+
+    get '/loaderio-c2db622309a20adaba9ae1264b6b581c/' do
+        "loaderio-c2db622309a20adaba9ae1264b6b581c"
+    end
 end
