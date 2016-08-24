@@ -1,0 +1,1 @@
+../_posts/2016-08-24-dev-journal-1.md

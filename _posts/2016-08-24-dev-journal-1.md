@@ -38,5 +38,5 @@ Now as far as the database goes, this is a very simple project but I want to
 ensure extensibility while keeping it clean. Well, this is the first draft, it
 can evolve in the next days. That is what I am thinking right now:
 
-![Database so far](/img/database_first_draft.jpg)
+![Database so far](/backend-code-challenge/img/database_first_draft.jpg)
 
