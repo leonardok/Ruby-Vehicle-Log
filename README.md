@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.com/leonardok/backend-code-challenge.svg?token=8XAKKKyajnLR8cwYPUiC&branch=master)](https://travis-ci.com/leonardok/backend-code-challenge)
 
+Project Docs at: [Project Docs](http://leok.me/backend-code-challenge)
+
 The public transport authority of Snowdonia town has mandated that all transport modes in the town be equipped with GPS emitters, radiating a vehicle's position every 20 seconds. The mayor has come to you to devise a solution for collecting this information for appropriate use by the city council to make intelligent future decisions about their public transport policy.
 
 You are tasked with constructing an API endpoint to collect all GPS emissions from the city's fleet of:
