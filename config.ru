@@ -1,5 +1,6 @@
 # require all the controllers
-Dir.glob('./app/*_controller.rb').each { |file| require file }
+require_relative 'app/vehicle_controller.rb'
+require_relative 'app/home_controller.rb'
 
 map('/vehicles/') { run VehicleController }
 map('/') { run HomeController }

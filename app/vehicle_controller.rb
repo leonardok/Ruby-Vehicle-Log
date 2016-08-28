@@ -1,8 +1,8 @@
-require 'sinatra/base'
+require_relative 'application_controller'
 require 'json'
 
 # This class exposes the supported vehicle APIs
-class VehicleController < Sinatra::Base
+class VehicleController < ApplicationController
     # This logs a vehicle position
     #
     # params:

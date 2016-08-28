@@ -1,0 +1,16 @@
+defaults: &defaults
+  adapter: postgresql
+  username: pguser
+  password: development_password
+  host: localhost
+
+development:
+  database: development
+  <<: *defaults
+
+test:
+  database: test
+  <<: *defaults
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>

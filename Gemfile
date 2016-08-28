@@ -1,8 +1,17 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
-gem 'rspec'
-gem 'yard'
 gem 'json'
-gem 'ruby-jmeter'
 gem 'unicorn'
+gem 'activerecord'
+gem 'sinatra-activerecord'
+
+group :development, :test do
+    gem 'sqlite3'
+    gem 'yard'
+    gem 'rspec'
+end
+
+group :production do
+    gem 'pg'
+end
