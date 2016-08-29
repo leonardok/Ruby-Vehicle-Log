@@ -18,6 +18,12 @@ describe Vehicle do
       v = Vehicle.new(:vehicle_type => type)
       expect(v.invalid?).to eq true
     end
+
+    it 'when the uuid is not valid' do
+      v = Vehicle.new
+      is_valid = v.validates_uuid_format 'not valid uuid'
+      expect(is_valid).to eq false
+    end
   end
 
   context 'Should be valid' do
@@ -28,5 +34,10 @@ describe Vehicle do
       v = Vehicle.new(:vehicle_type => type, :enabled_city => city)
       expect(v.valid?).to eq true
     end
+  end
+
+  it 'Should save the ID in the UUID format' do
+    v = create(:vehicle)
+    expect(v.validates_uuid_format(v.id)).to eq true
   end
 end
