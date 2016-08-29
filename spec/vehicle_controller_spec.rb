@@ -39,9 +39,21 @@ RSpec.describe VehicleController do
     end
   end
 
-  it 'returns 400 for vehicle position outside the city'
+  it 'returns 200 but ignore when vehicle position outside the city' do
+    # -29.3795583,-50.9365089 - Gramado
+    # fixture is in Porto Alegre ~ 100km distance
+    vehicle = create(:vehicle)
+    
+    post '/log', {:uuid => vehicle.id,
+                  :type => vehicle.vehicle_type.id,
+                  :heading => 90,
+                  :recorded_at => DateTime.now,
+                  :lat => -29.3795583,
+                  :lgt => -50.9365089}
+    expect(last_response.status).to eq(200)
+  end
 
-  it 'returns OK for post with good formatting' do
+  it 'returns 200 for post with good formatting' do
     vehicle = create(:vehicle)
     
     post '/log', {:uuid => vehicle.id,

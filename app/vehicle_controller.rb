@@ -1,6 +1,5 @@
 require_relative 'application_controller'
 require 'json'
-require 'pry'
 
 # This class exposes the supported vehicle APIs
 class VehicleController < ApplicationController
