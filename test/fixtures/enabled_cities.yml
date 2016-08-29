@@ -1,0 +1,5 @@
+porto_alegre:
+  name: porto alegre
+  center_lat: -30.03306
+  center_lgt: -51.23000
+  radius: 50000

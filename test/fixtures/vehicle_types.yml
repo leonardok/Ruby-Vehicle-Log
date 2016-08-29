@@ -1,0 +1,8 @@
+taxi:
+  name: taxi
+bus:
+  name: bus
+tram:
+  name: tram
+train:
+  name: train

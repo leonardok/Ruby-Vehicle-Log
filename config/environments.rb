@@ -1,7 +1,9 @@
+require 'sinatra'
 require "sinatra/activerecord"
 
-
-set :database_file, "config/database.yml"
+configure :development do
+  set :database_file, "database.yml"
+end
 
 configure :production do
  db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///localhost/mydb')
