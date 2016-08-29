@@ -1,36 +1,42 @@
 require_relative 'application_controller'
 require 'json'
 
+require_relative 'model/vehicle'
+require_relative 'model/vehicle_type'
+require_relative 'model/vehicle_position_log'
+
 # This class exposes the supported vehicle APIs
 class VehicleController < ApplicationController
   # This logs a vehicle position
   #
   # params:
-  #   uuid        the vehicle uuid
-  #   type        vehicle type
-  #   lat         current latitude
-  #   lgt         current longitude
-  #   recorded_at time when recorded position
-  #   heading     Number between 0 and 359: 0 is true North. 180 is true
-  #               South. 90 is true East. 270 is true West
+  #   vehicle_id      the vehicle uuid
+  #   vehicle_type_id vehicle type
+  #   lat              current latitude
+  #   lgt              current longitude
+  #   recorded_at      time when recorded position
+  #   heading          Number between 0 and 359: 0 is true North. 180 is true
+  #                    South. 90 is true East. 270 is true West
   #
   post '/log' do
-    vehicle = Vehicle.find_by id: request.params.fetch('uuid', 0)
-
-    position_log = VehiclePositionLog.new
-    position_log.vehicle_id = vehicle.id if vehicle != nil
-    position_log.lat = request.params.fetch('lat', 190)
-    position_log.lgt = request.params.fetch('lgt', 190)
-    position_log.heading = request.params.fetch('heading', 361)
-
     begin
-      position_log.recorded_at = DateTime.parse(request.params.fetch('recorded_at'))
+      json = JSON.parse(request.body.read)
+      position_log = VehiclePositionLog.new(json.slice("vehicle_id", "lat", "lgt", "recorded_at", "heading"))
     rescue
-      position_log.recorded_at = 0
     end
 
+    # if we couldnt create the position log return error
+    if !position_log
+      logger.info "Could not create position log with given values"
+      halt 400
+    end
+
+    # check if its valid
     if position_log.invalid? or
-       vehicle.vehicle_type.id.to_s != request.params.fetch('type')
+       position_log.vehicle == nil or
+       position_log.vehicle.vehicle_type == nil or
+       position_log.vehicle.vehicle_type.id != json.fetch('vehicle_type_id').to_i
+      logger.info position_log.errors
       halt 400
     end
 
