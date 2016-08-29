@@ -4,6 +4,8 @@
 require 'sinatra/activerecord/rake'
 require 'zlib'
 
+require 'config/environments'
+
 namespace :db do
   task :load_config do
     require_relative "app/application_controller"
