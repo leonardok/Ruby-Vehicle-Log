@@ -40,7 +40,7 @@ class VehicleController < ApplicationController
       halt 400
     end
 
-    position_log.save
+    position_log.save(:validate => false)
     {'message': 'ok'}.to_json
   end
 end

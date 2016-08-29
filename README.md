@@ -34,13 +34,9 @@ Every emission from the new devices will always contain the following pieces of 
 
 Snowdonia town has ~1000 vehicles in active operation at any given moment. Each vehicle could theoretically emit their position at the exact same moment. The solution must demonstrate evidence of 1000 concurrent emissions (at maximum) being handled by your developed API without an error.
 
-We will accept any form of evidence of successful testing. Some examples:
-
 * clearly-readable performance benchmarking
 * a video screen capture of your 1000 vehicle clients being received
 * your creative choice
-
-We would like to see whatever testing mechanism you constructed to radiate GPS positions for your suite of test vehicles. Please ensure it is committed along with the API endpoint code, with clear instructions for us to run your test client.
 
 ### Technical Assumptions
 
@@ -50,9 +46,4 @@ We would like to see whatever testing mechanism you constructed to radiate GPS p
 * You are not limited in the API endpoint architecture, design, protocol, system or mechanism you wish to implement.
 * Feel free to pre-seed your ecosystem with arbitrary vehicles and unique identifiers. API endpoints for registering vehicles in your ecosystem are not part of the challenge.
 * Unique identifiers conform to the UUID identifier standard (https://en.wikipedia.org/wiki/Universally_unique_identifier)
-
-### Optional
-
-A containerized solution is not a requirement, but definitely preferred for us to easily deploy your solution and test. Adding a `Dockerfile` to your solution is optional.
-Ideally, your API would be deployed to a public location (heroku, AWS, your choice) for us to test against, with your 1000 client concurrent test suite.
 

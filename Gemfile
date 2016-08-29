@@ -8,6 +8,7 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'rake'
 gem 'pg'
+gem 'thin'
 
 group :development, :test do
     gem 'rspec'

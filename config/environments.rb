@@ -1,6 +1,7 @@
 require 'sinatra'
 require "sinatra/activerecord"
 
+
 configure :development do
   set :database_file, "database.yml"
 end

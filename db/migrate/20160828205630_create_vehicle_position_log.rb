@@ -1,6 +1,6 @@
 class CreateVehiclePositionLog < ActiveRecord::Migration
   def change
-    create_table :vehicle_position_logs do |t|
+    create_table :vehicle_position_logs, id: false do |t|
       t.integer :heading
       t.datetime :recorded_at
       t.float :lat

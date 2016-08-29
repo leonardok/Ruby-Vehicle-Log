@@ -1,1 +1,0 @@
-../_posts/2016-08-24-how-to-deploy.md

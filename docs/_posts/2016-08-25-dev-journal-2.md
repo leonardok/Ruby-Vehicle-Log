@@ -70,7 +70,7 @@ alternatives for a tool that I knew would do the job: 1. Because a lot can
 change in no time, so I just went to check if there were new tools that are
 better; 2. I dislike JMeter UI.
 
-I intalled Ubuntu JMeter (2.8.x), created the test case, `scripts/load.jmx`,
+I installed Ubuntu JMeter (2.8.x), created the test case, `scripts/load.jmx`,
 and was up and running. I configured to run 1000 threads with 20 seconds of
 rampup for 2 minutes. What I got was a very bad result: around 5 seconds
 average response. That to me was unacceptable.

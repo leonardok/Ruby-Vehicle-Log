@@ -1,3 +1,19 @@
 taxi:
+  id: 3e6d1bcb-30a9-47ad-aa61-37c643c46b5f
   vehicle_type_id: 1
+  enabled_city_id: 1
+
+bus:
+  id: b7d2e74f-ab6c-4d92-a269-7517bbe099f0
+  vehicle_type_id: 2
+  enabled_city_id: 1
+
+tram:
+  id: ea411c6e-70ca-4954-99bb-be4e2655bcf5
+  vehicle_type_id: 3
+  enabled_city_id: 1
+  
+train:
+  id: 8a2562c5-fa1f-4946-b450-995b689b53d9
+  vehicle_type_id: 4
   enabled_city_id: 1

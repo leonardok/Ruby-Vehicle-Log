@@ -5,7 +5,6 @@ class VehiclePositionLog < ActiveRecord::Base
   before_save :ignore_if_outside
 
   validates_presence_of :vehicle, :lat, :lgt, :recorded_at, :heading
-  #validate :recorded_at_valid_time
 
   validates_numericality_of :lat, :greater_than_or_equal_to => -90, :less_than_or_equal_to => 90
   validates_numericality_of :lgt, :greater_than_or_equal_to => -180, :less_than_or_equal_to => 180
