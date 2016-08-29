@@ -14,4 +14,12 @@ FactoryGirl.define do
     enabled_city
     vehicle_type
   end
+
+  factory :vehicle_position_log do
+    vehicle
+    lat 30
+    lgt 51
+    heading 90
+    recorded_at DateTime.new
+  end
 end

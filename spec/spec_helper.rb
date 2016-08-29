@@ -1,4 +1,8 @@
 require 'factory_girl'
+require 'sinatra/activerecord'
+
+ActiveRecord::Base.logger = nil unless ENV['LOG'] == true
+
 
 RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods

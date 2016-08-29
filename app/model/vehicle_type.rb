@@ -1,5 +1,5 @@
 class VehicleType < ActiveRecord::Base
   has_many :vehicles
 
-  validates :name, presence: true
+  validates_presence_of :name
 end
